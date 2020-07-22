@@ -25,7 +25,6 @@ RUN apk add --no-cache pcre-dev $PHPIZE_DEPS \
 WORKDIR /laravel
 COPY --from=composer /composer/vendor/ /laravel/vendor/
 COPY . /laravel
-RUN  php artisan view:cache
 
 CMD ["php-fpm"]
 
